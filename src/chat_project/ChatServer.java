@@ -4,15 +4,15 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ChatServer {
     private static final int PORT = 12345;
-    private static Map<String, PrintWriter> clients = new HashMap<>();
-    private static Map<String, Integer> clientRooms = new HashMap<>();
-    private static Map<Integer, List<String>> rooms = new HashMap<>();
+    private static Map<String, PrintWriter> clients = new ConcurrentHashMap<>();
+    private static Map<String, Integer> clientRooms = new ConcurrentHashMap<>();
+    private static Map<Integer, List<String>> rooms = new ConcurrentHashMap<>();
     private static int roomCount = 0;
 
     public static void main(String[] args) {
