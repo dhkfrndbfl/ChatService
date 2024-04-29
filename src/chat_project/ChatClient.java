@@ -39,18 +39,18 @@ public class ChatClient {
                     continue;
                 }
 
-                // '/bye'를 입력하면 클라이언트를 종료합니다.
+                // '/bye'를 입력하면 클라이언트를 종료.
                 if ("/bye".equals(userInput)) {
                     out.println(userInput);
                     break;
                 }
 
-                // 일반 메시지를 서버로 전송합니다.
+                // 일반 메시지를 서버로 전송.
                 out.println("MESSAGE " + userInput);
             } // while
 
-            // 클라이언트와 서버는 명시적으로 close를 합니다. close를 할 경우 상대방쪽의 readLine()이 null을 반환됩니다. 이 값을 이용하여 접속이 종료된 것을 알 수 있습니다.
-            in.close();
+            /* 클라이언트와 서버는 명시적으로 close를 합니다. close를 할 경우 상대방쪽의 readLine()이 null을 반환.
+            이 값을 이용하여 접속이 종료된 걸 알 수 있음.*/
             out.close();
             socket.close();
 
